@@ -1,3 +1,7 @@
+" plugin management
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
 "{{{Auto Commands
 
 " Automatically cd into the directory that the file is in
@@ -142,24 +146,6 @@ endfunction
 
 "}}}
 
-"{{{Theme Rotating
-let themeindex=0
-function! RotateColorTheme()
-   let y = -1
-   while y == -1
-      let colorstring = "inkpot#ron#blue#elflord#evening#koehler#murphy#pablo#desert#torte#"
-      let x = match( colorstring, "#", g:themeindex )
-      let y = match( colorstring, "#", x + 1 )
-      let g:themeindex = x + 1
-      if y == -1
-         let g:themeindex = 0
-      else
-         let themestring = strpart(colorstring, x + 1, y - x - 1)
-         return ":colorscheme ".themestring
-      endif
-   endwhile
-endfunction
-" }}}
 
 "{{{ Paste Toggle
 let paste_mode = 0 " 0 = normal, 1 = paste
@@ -191,6 +177,7 @@ endfunction
 "}}}
 
 "}}}
+
 
 "{{{ Mappings
 
@@ -297,5 +284,12 @@ sy on
 
 " highlight current line
 set cul
+
 " adjust color
 hi CursorLine term=none cterm=none ctermbg=3
+
+" Initialize NERDTree on load
+autocmd VimEnter * NERDTree
+
+" Set cursor focus on opened file instead of the NERDTree
+autocmd VimEnter * wincmd p
