@@ -206,7 +206,7 @@ nnoremap <silent> <C-Left> :tabprevious<CR>
 nnoremap <silent> <C-t> :tabnew<CR>
 
 " Rotate Color Scheme <F8>
-nnoremap <silent> <F8> :execute RotateColorTheme()<CR>
+" nnoremap <silent> <F8> :execute RotateColorTheme()<CR>
 
 " DOS is for fools.
 nnoremap <silent> <F9> :%s/$//g<CR>:%s// /g<CR>
@@ -294,6 +294,4 @@ autocmd VimEnter * NERDTree
 " Set cursor focus on opened file instead of the NERDTree
 autocmd VimEnter * wincmd p
 
-set nocursorcolumn
-set nocursorline
-syntax sync minlines=256
+nmap <F8> :TagbarToggle<CR>
