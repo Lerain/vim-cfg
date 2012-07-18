@@ -293,3 +293,7 @@ autocmd VimEnter * NERDTree
 
 " Set cursor focus on opened file instead of the NERDTree
 autocmd VimEnter * wincmd p
+
+set nocursorcolumn
+set nocursorline
+syntax sync minlines=256
