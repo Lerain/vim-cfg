@@ -209,11 +209,11 @@ nnoremap <silent> <C-t> :tabnew<CR>
 " nnoremap <silent> <F8> :execute RotateColorTheme()<CR>
 
 " DOS is for fools.
-nnoremap <silent> <F9> :%s/$//g<CR>:%s// /g<CR>
+" nnoremap <silent> <F9> :%s/$//g<CR>:%s// /g<CR>
 
 " Paste Mode!  Dang! <F10>
-nnoremap <silent> <F10> :call Paste_on_off()<CR>
-set pastetoggle=<F10>
+" nnoremap <silent> <F10> :call Paste_on_off()<CR>
+" set pastetoggle=<F10>
 
 " Edit vimrc \ev
 nnoremap <silent> <Leader>ev :tabnew<CR>:e ~/.vimrc<CR>
@@ -279,7 +279,7 @@ syntax on
 " cd into the directory of an opened file
 set autochdir
 
-colorscheme wombat
+colorscheme ir_black
 sy on
 
 " highlight current line
@@ -294,4 +294,3 @@ autocmd VimEnter * NERDTree
 " Set cursor focus on opened file instead of the NERDTree
 autocmd VimEnter * wincmd p
 
-nmap <F8> :TagbarToggle<CR>
